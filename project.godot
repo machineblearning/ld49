@@ -8,6 +8,40 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "State",
+"class": "IdleState",
+"language": "GDScript",
+"path": "res://scripts/idle_state.gd"
+}, {
+"base": "KinematicBody",
+"class": "PersistentState",
+"language": "GDScript",
+"path": "res://scripts/persistent_state.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://scripts/state.gd"
+}, {
+"base": "Reference",
+"class": "StateFactory",
+"language": "GDScript",
+"path": "res://scripts/state_factory.gd"
+}, {
+"base": "State",
+"class": "WalkState",
+"language": "GDScript",
+"path": "res://scripts/walk_state.gd"
+} ]
+_global_script_class_icons={
+"IdleState": "",
+"PersistentState": "",
+"State": "",
+"StateFactory": "",
+"WalkState": ""
+}
+
 [application]
 
 config/name="Nukulur Falling Tower"

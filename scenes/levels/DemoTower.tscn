@@ -1,36 +1,62 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/entities/StatePlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/entities/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/bg.png" type="Texture" id=3]
 
 [node name="DemoTower" type="Spatial"]
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.29529, 0 )
+[node name="Platforms" type="Spatial" parent="."]
 
-[node name="Platform" parent="." instance=ExtResource( 2 )]
+[node name="Platform" parent="Platforms" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.484098, 0 )
 
-[node name="Platform" parent="Platform" instance=ExtResource( 2 )]
+[node name="Platform" parent="Platforms/Platform" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96265, 0, 0 )
 
-[node name="Platform2" parent="Platform" instance=ExtResource( 2 )]
+[node name="Platform2" parent="Platforms/Platform" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.959747, 0, 0 )
 
-[node name="Platform2" parent="." instance=ExtResource( 2 )]
+[node name="Platform2" parent="Platforms" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33722, -7.45778, 0 )
 
-[node name="Platform" parent="Platform2" instance=ExtResource( 2 )]
+[node name="Platform" parent="Platforms/Platform2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96265, 0, 0 )
 
-[node name="Platform2" parent="Platform2" instance=ExtResource( 2 )]
+[node name="Platform2" parent="Platforms/Platform2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.959747, 0, 0 )
 
-[node name="Platform3" parent="." instance=ExtResource( 2 )]
+[node name="Platform3" parent="Platforms" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84413, -16.6217, 0 )
 
-[node name="Platform" parent="Platform3" instance=ExtResource( 2 )]
+[node name="Platform" parent="Platforms/Platform3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96265, 0, 0 )
 
-[node name="Platform2" parent="Platform3" instance=ExtResource( 2 )]
+[node name="Platform2" parent="Platforms/Platform3" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.959747, 0, 0 )
+
+[node name="Platform4" parent="Platforms" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4464, 29.8243, 0 )
+
+[node name="Platform" parent="Platforms/Platform4" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.947733, 0, 0 )
+
+[node name="Platform2" parent="Platforms/Platform4" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90504, 0, 0 )
+
+[node name="Platform3" parent="Platforms/Platform4" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.86465, 0, 0 )
+
+[node name="Platform4" parent="Platforms/Platform4" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82426, 0, 0 )
+
+[node name="Platform5" parent="Platforms/Platform4" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77841, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35.9516, 0 )
+
+[node name="BackgroundSprite" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8 )
+pixel_size = 0.06
+texture = ExtResource( 3 )
