@@ -49,4 +49,6 @@ Falling
 
 Gliding
 
+Dodging
+
 Hitstun

@@ -4,8 +4,8 @@ class_name State
 
 var change_state
 var persistent_state
-#var sprite
 var animation_player
+var is_facing_right = true
 
 var velocity = Vector3()
 var gravity: float = 4.0
@@ -18,7 +18,6 @@ func _physics_process(_delta):
 func setup(change_state, persistent_state, animation_player):
 	self.change_state = change_state
 	self.persistent_state = persistent_state
-	#self.sprite = sprite
 	self.animation_player = animation_player
 
 func move_left():
@@ -32,3 +31,7 @@ func set_sprite():
 
 func hide_sprite():
 	pass
+
+func flip_sprite(is_right):
+	is_facing_right = is_right
+	persistent_state.sprite.flip_h = not is_facing_right

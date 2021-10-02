@@ -14,9 +14,11 @@ var lock
 
 func _ready():
 	lock = true
-	#animation_player
-	#$WalkSprite.visible = true
-	#persistent_state.sprite.visible = true
+	persistent_state.sprite.visible = false
+	persistent_state.sprite = persistent_state.get_node("WalkSprite")
+	persistent_state.sprite.visible = true
+	
+	self.animation_player.play("walk_anim")
 	pass
 
 func _physics_process(delta):
@@ -51,10 +53,20 @@ func _physics_process(delta):
 	inputX = 0
 
 func move_left():
-	inputX = -1
+	#persistent_state.sprite.flip_h = true
+	self.flip_sprite(false)
+	if inputX == 1:
+		inputX = 0
+	else:
+		inputX = -1
 
 func move_right():
-	inputX = 1
+	#persistent_state.sprite.flip_h = false
+	self.flip_sprite(true)
+	if inputX == -1:
+		inputX = 0
+	else:
+		inputX = 1
 
 func set_sprite():
 	#persistent_state.sprite = $WalkSprite
