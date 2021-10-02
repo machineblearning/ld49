@@ -5,7 +5,11 @@ var states
 func _init():
 	states = {
 		"idle": IdleState,
-		"walk": WalkState
+		"walk": WalkState,
+		"falling": FallingState,
+		"gliding": GlidingState,
+		"dodge": DodgeState,
+		"hitstun": HitstunState
 }
 
 func get_state(state_name):

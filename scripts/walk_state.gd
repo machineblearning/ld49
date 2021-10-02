@@ -14,12 +14,8 @@ var lock
 
 func _ready():
 	lock = true
-	persistent_state.sprite.visible = false
-	persistent_state.sprite = persistent_state.get_node("WalkSprite")
-	persistent_state.sprite.visible = true
 	
 	self.animation_player.play("walk_anim")
-	pass
 
 func _physics_process(delta):
 	# left/right movement
@@ -36,10 +32,10 @@ func _physics_process(delta):
 	# clamp horizontal movement
 	persistent_state.velocity.x = clamp(persistent_state.velocity.x, -max_move_speed, max_move_speed)
 	
-	# fall movement (gravity)
-	persistent_state.velocity.y -= gravity * delta
-	# clamp fall movement
-	persistent_state.velocity.y = clamp(persistent_state.velocity.y, -max_fall_speed, max_fall_speed)
+	## fall movement (gravity)
+	#persistent_state.velocity.y -= gravity * delta
+	## clamp fall movement
+	#persistent_state.velocity.y = clamp(persistent_state.velocity.y, -max_fall_speed, max_fall_speed)
 	
 	# condition to return to "idle" state
 	if lock and abs(persistent_state.velocity.x) > min_move_speed:
@@ -48,7 +44,11 @@ func _physics_process(delta):
 		persistent_state.velocity.x = 0.0
 		lock = true
 		change_state.call_func("idle")
-		pass
+	
+	# condition to transition to "falling" state
+	#if persistent_state.velocity.y > 0.0:
+	if not persistent_state.is_on_floor():
+		change_state.call_func("falling")
 	
 	inputX = 0
 
@@ -68,11 +68,4 @@ func move_right():
 	else:
 		inputX = 1
 
-func set_sprite():
-	#persistent_state.sprite = $WalkSprite
-	pass
 
-func hide_sprite():
-	#$WalkSprite.visible = false
-	#persistent_state.sprite.visible = false
-	pass

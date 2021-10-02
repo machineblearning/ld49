@@ -7,17 +7,19 @@ var state_factory
 var sprite
 
 var velocity = Vector3()
+#var grounded: bool = false
 
 func _ready():
-	self.sprite = $IdleSprite
+	self.sprite = $Sprite
 	state_factory = StateFactory.new()
 	change_state("idle")
 
-func _physics_process(delta):
-	if not is_on_floor():
-		self.velocity.y -= state.gravity * delta
-	else:
-		self.velocity.y = 0.0
+func _physics_process(_delta):
+	#if not is_on_floor():	# in air
+	#	self.velocity.y -= state.gravity * delta
+	#else:					# on floor
+	#	self.velocity.y = 0.0
+	pass
 
 # Input code was placed here for tutorial purposes.
 func _process(_delta):
