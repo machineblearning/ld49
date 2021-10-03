@@ -48,6 +48,7 @@ func _physics_process(delta):
 	# condition to transition to "falling" state
 	#if persistent_state.velocity.y > 0.0:
 	if not persistent_state.is_on_floor():
+		persistent_state.deploy_sound.play()
 		change_state.call_func("falling")
 	
 	inputX = 0
@@ -68,7 +69,7 @@ func move_right():
 	else:
 		inputX = 1
 
-func action_glide():
+func action_glide(is_gliding):
 	pass
 
 func action_dodge():

@@ -43,7 +43,7 @@ func move_left():
 func move_right():
 	pass
 
-func action_glide():
+func action_glide(is_gliding):
 	pass
 
 func action_dodge():

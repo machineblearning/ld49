@@ -21,6 +21,7 @@ func _physics_process(delta):
 	# condition to transition to "idle" state
 	if persistent_state.is_on_floor():
 		# refresh stamina (landing)
+		persistent_state.landing_sound.play()
 		persistent_state.stamina = 100.0
 		
 		change_state.call_func("idle")
@@ -33,8 +34,11 @@ func move_right():
 	self.flip_sprite(true)
 	inputX = 1
 
-func action_glide():
-	change_state.call_func("gliding")
+func action_glide(is_gliding):
+	if is_gliding:
+		change_state.call_func("gliding")
+	else:
+		pass
 	
 
 func action_dodge():

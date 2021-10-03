@@ -6,6 +6,10 @@ var state
 var state_factory
 var sprite
 
+onready var landing_sound = $LandingSoundPlayer
+onready var deploy_sound = $DeploySoundPlayer
+onready var dodge_sound = $DodgeSoundPlayer
+
 var velocity = Vector3()
 var health: int
 var armor: int
@@ -36,9 +40,9 @@ func _process(_delta):
 	
 	# Glide
 	if Input.is_action_just_pressed("action_glide"):
-		action_glide()
+		action_glide(true)
 	if Input.is_action_just_released("action_glide"):
-		action_glide()
+		action_glide(false)
 	
 	# Dodge
 	if Input.is_action_just_pressed("action_dodge"):
@@ -52,8 +56,8 @@ func move_left():
 func move_right():
 	state.move_right()
 
-func action_glide():
-	state.action_glide()
+func action_glide(is_gliding):
+	state.action_glide(is_gliding)
 
 func action_dodge():
 	state.action_dodge()

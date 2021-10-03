@@ -51,8 +51,11 @@ func move_right():
 	self.flip_sprite(true)
 	inputX = 1
 
-func action_glide():
-	change_state.call_func("falling")
+func action_glide(is_gliding):
+	if not is_gliding:
+		change_state.call_func("falling")
+	else:
+		pass
 
 func action_dodge():
 	change_state.call_func("dodge")

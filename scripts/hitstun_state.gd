@@ -24,7 +24,7 @@ func move_right():
 	self.flip_sprite(true)
 	#change_state.call_func("walk")
 
-func action_glide():
+func action_glide(is_gliding):
 	pass
 
 func action_dodge():
