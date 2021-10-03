@@ -3,7 +3,7 @@ extends Spatial
 onready var player = self.get_parent().get_node("Player/KinematicBody")
 var debris = preload("res://scenes/entities/Debris.tscn")
 
-var spawn_rate: float = 5 # objects per sec
+var spawn_rate: float = 2.5 # objects per sec
 var rng
 export var rng_mean: float = 0.0
 var rng_deviation: float = 7.0
@@ -27,7 +27,6 @@ func _on_SpawnTimer_timeout():
 	d.get_node("KinematicBody").connect("delete_me", self, "_on_delete_debris")
 
 func _on_hit_player():
-	print("signal")
 	player.hurt()
 
 func _on_delete_debris(objRef):

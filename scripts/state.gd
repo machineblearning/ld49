@@ -25,6 +25,9 @@ func _physics_process(delta):
 
 func _process(_delta):
 #	print("- - - -")
+	print("health: ", persistent_state.health)
+	print("armor: ", persistent_state.armor)
+#	print("collision layer: ", persistent_state.collision_layer)
 #	print("On floor? ", persistent_state.is_on_floor())
 #	print("fall velocity: ", persistent_state.velocity.y)
 #	print("stamina: ", persistent_state.stamina)

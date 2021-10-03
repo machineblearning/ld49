@@ -5,7 +5,6 @@ class_name HitstunState
 var id = "hitstun"
 
 func _ready():
-	print("collision layer: ", persistent_state.collision_layer)
 	persistent_state.collision_layer = 8
 	
 	self.animation_player.play("hitstun_anim")
@@ -13,7 +12,8 @@ func _ready():
 	self.hitstun_timer.connect("timeout", self, "_on_hitstun_timeout")
 	self.hitstun_timer.start()
 	
-	# TODO: decrease health/armor (take dmg)
+	# take damage
+	persistent_state.take_damage()
 
 func _physics_process(_delta):
 	#persistent_state.velocity.y -= gravity * delta

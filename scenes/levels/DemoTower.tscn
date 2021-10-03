@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/entities/StatePlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/entities/Platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/bg.png" type="Texture" id=3]
+[ext_resource path="res://scenes/entities/PowerUp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/entities/DebrisSpawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/DemoTower.gd" type="Script" id=6]
 
 [node name="DemoTower" type="Spatial"]
+script = ExtResource( 6 )
 
 [node name="Platforms" type="Spatial" parent="."]
 
@@ -58,7 +61,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82426, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77841, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35.9516, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72451, 42.5926, 0 )
 
 [node name="BackgroundSprite" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102013, 0.0382538, -8 )
@@ -323,3 +326,24 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77777, 0, 0 )
 
 [node name="Platform9" parent="Spatial2/XLPlatform4" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.79296, 0, 0 )
+
+[node name="PowerUp" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20092, 30.9155, 0.666378 )
+type = 2
+
+[node name="PowerUp2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3781, 16.6079, 0 )
+type = 4
+
+[node name="PowerUp3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1864, 16.6079, 0 )
+type = 3
+
+[node name="PowerUp4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25748, 16.6079, 0 )
+type = 2
+
+[connection signal="collected" from="PowerUp" to="." method="_on_PowerUp_collected"]
+[connection signal="collected" from="PowerUp2" to="." method="_on_PowerUp_collected"]
+[connection signal="collected" from="PowerUp3" to="." method="_on_PowerUp_collected"]
+[connection signal="collected" from="PowerUp4" to="." method="_on_PowerUp_collected"]
