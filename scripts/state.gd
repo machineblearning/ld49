@@ -24,11 +24,12 @@ func _physics_process(delta):
 	#persistent_state.move_and_slide_with_snap(persistent_state.velocity, Vector3.DOWN * 32, Vector3.UP)
 
 func _process(_delta):
-	print("- - - -")
-	print("On floor? ", persistent_state.is_on_floor())
-	print("fall velocity: ", persistent_state.velocity.y)
-	print("stamina: ", persistent_state.stamina)
-	print("State: ", persistent_state.state.id)
+#	print("- - - -")
+#	print("On floor? ", persistent_state.is_on_floor())
+#	print("fall velocity: ", persistent_state.velocity.y)
+#	print("stamina: ", persistent_state.stamina)
+#	print("State: ", persistent_state.state.id)
+	pass
 
 func setup(change_state, persistent_state, animation_player, hitstun_timer, dodge_timer):
 	self.change_state = change_state

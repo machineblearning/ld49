@@ -14,6 +14,7 @@ var lock
 
 func _ready():
 	lock = true
+	persistent_state.collision_layer = 1
 	
 	self.animation_player.play("walk_anim")
 

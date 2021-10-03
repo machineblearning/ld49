@@ -72,6 +72,12 @@ config/name="Nukulur Falling Tower"
 run/main_scene="res://scenes/SceneManager.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/height=576
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [importer_defaults]
 
 texture={

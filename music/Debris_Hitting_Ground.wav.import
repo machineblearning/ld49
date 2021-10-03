@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Debris_Hitting_Ground.wav-38fc547bf5de9dca128e3ef4ff2625b3.sample"
+
+[deps]
+
+source_file="res://music/Debris_Hitting_Ground.wav"
+dest_files=[ "res://.import/Debris_Hitting_Ground.wav-38fc547bf5de9dca128e3ef4ff2625b3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

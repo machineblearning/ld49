@@ -4,18 +4,19 @@ class_name GlidingState
 
 var id = "gliding"
 
-var move_speed: float = 32.0
+var move_speed: float = 100.0 #32.0
 var min_move_speed: float = 0.05
 var max_move_speed: float = 20.0
 var max_fall_speed: float = 8.0
 var slow_down_speed: float = 12.0
 var inputX: int = 0
 var lock
-var thrust_power: float = 0.1
+var thrust_power: float = 1.0 #0.1
 var max_thurst: float = -2.5
 var stamina_cost: float = 0.1
 
 func _ready():
+	persistent_state.collision_layer = 1
 	lock = true
 	self.animation_player.play("gliding_anim")
 

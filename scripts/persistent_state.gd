@@ -62,6 +62,9 @@ func action_glide(is_gliding):
 func action_dodge():
 	state.action_dodge()
 
+func hurt():
+	state.hurt()
+
 func change_state(new_state_name):
 	# clean up current state before transition
 	
@@ -76,4 +79,6 @@ func change_state(new_state_name):
 	
 	# transition to new state
 	add_child(state)
+
+
 

@@ -4,10 +4,13 @@ class_name HitstunState
 
 var id = "hitstun"
 
-func _ready():	
+func _ready():
+	print("collision layer: ", persistent_state.collision_layer)
+	persistent_state.collision_layer = 8
+	
 	self.animation_player.play("hitstun_anim")
 	self.hitstun_timer.set_wait_time(0.6)
-	self.hitstun_timer.connect("timeout", self, "hurt")
+	self.hitstun_timer.connect("timeout", self, "_on_hitstun_timeout")
 	self.hitstun_timer.start()
 	
 	# TODO: decrease health/armor (take dmg)
@@ -31,4 +34,11 @@ func action_dodge():
 	pass
 
 func hurt():
-	change_state.call_func("idle")
+	#change_state.call_func("idle")
+	pass
+
+func _on_hitstun_timeout():
+	#change_state.call_func("idle")
+	#persistent_state.get_node("CollisionShape").e
+	persistent_state.collision_layer = 1
+	change_state.call_func("falling")

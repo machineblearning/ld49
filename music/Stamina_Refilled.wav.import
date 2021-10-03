@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Stamina_Refilled.wav-aa47aea2b6bf83f832098cd9c8562267.sample"
+
+[deps]
+
+source_file="res://music/Stamina_Refilled.wav"
+dest_files=[ "res://.import/Stamina_Refilled.wav-aa47aea2b6bf83f832098cd9c8562267.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
