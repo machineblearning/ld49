@@ -68,4 +68,11 @@ func move_right():
 	else:
 		inputX = 1
 
+func action_glide():
+	pass
 
+func action_dodge():
+	pass
+
+func hurt():
+	change_state.call_func("hitstun")
