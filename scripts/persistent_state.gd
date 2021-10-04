@@ -6,6 +6,8 @@ var state
 var state_factory
 var sprite
 
+signal dead
+
 onready var landing_sound = $LandingSoundPlayer
 onready var deploy_sound = $DeploySoundPlayer
 onready var dodge_sound = $DodgeSoundPlayer
@@ -109,8 +111,10 @@ func take_damage():
 			hat3.set_active(false)
 		update_armor_ui(self.armor)
 	elif self.health > 0: # handle health decrease
-		#self.health -= 1
+		self.health -= 1
 		update_health_ui(self.health)
+	else: # handle death
+		handle_death()
 
 func add_armor(type_id):
 	if self.armor < 3:
@@ -136,5 +140,8 @@ func update_armor_ui(val):
 
 func update_health_ui(val):
 	pass
+
+func handle_death():
+	emit_signal("dead")
 
 
