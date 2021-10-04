@@ -68,8 +68,10 @@ func _process(_delta):
 		move_right()
 	
 	# Glide
-	if Input.is_action_just_pressed("action_glide"):
-		action_glide(true)
+	#if Input.is_action_just_pressed("action_glide"):
+	if Input.is_action_pressed("action_glide"):
+		if self.stamina > 0.0:
+			action_glide(true)
 	if Input.is_action_just_released("action_glide"):
 		action_glide(false)
 	

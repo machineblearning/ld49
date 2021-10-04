@@ -21,7 +21,6 @@ tracks/0/keys = {
 
 [node name="DebrisSpawner" type="Spatial"]
 script = ExtResource( 1 )
-rng_mean = 0.935419
 
 [node name="SpawnTimer" type="Timer" parent="."]
 

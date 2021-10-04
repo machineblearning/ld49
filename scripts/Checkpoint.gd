@@ -4,6 +4,8 @@ onready var area = $Area
 onready var anim_player = $AnimationPlayer
 onready var checkpoint_sound = $CheckpointSoundPlayer
 
+signal checkpoint(sid)
+
 var active: bool = false
 
 func _ready():
@@ -16,4 +18,5 @@ func _on_checkpoint_entered(body):
 		self.active = true
 		anim_player.play("on_anim")
 		checkpoint_sound.play()
+		emit_signal("checkpoint", 1)
 		

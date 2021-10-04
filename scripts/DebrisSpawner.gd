@@ -1,7 +1,9 @@
 extends Spatial
 
 onready var player = self.get_parent().get_node("Player/KinematicBody")
+#onready var player = self.get_parent().get_node("KinematicBody")
 onready var spawn_timer = $SpawnTimer
+onready var anim_player = $AnimationPlayer
 var debris = preload("res://scenes/entities/Debris.tscn")
 
 var spawn_rate: float = 1.3 #2.5 - hard # objects per sec
@@ -12,6 +14,7 @@ var rng_deviation: float = 7.0
 func _ready():
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
+	anim_player.play("oscillate_center_anim")
 	
 	spawn_timer.wait_time = 60 / ( 60 * spawn_rate)
 	spawn_timer.connect("timeout", self, "_on_SpawnTimer_timeout")

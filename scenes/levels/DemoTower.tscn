@@ -19,18 +19,18 @@
 [node name="DemoTower" type="Spatial"]
 script = ExtResource( 6 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72451, 37.7208, 0 )
-
 [node name="DebrisSpawner" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 55.9129, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00329971, 56.3216, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.090538, 53.0235, 0 )
 
 [node name="PowerUp" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62879, 30.9155, 0.666378 )
 type = 2
 
 [node name="PowerUp2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6841, 13.9552, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8717, 13.2466, 0 )
 type = 4
 
 [node name="PowerUp3" parent="." instance=ExtResource( 4 )]
@@ -42,7 +42,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74068, 14.6392, 0 )
 type = 2
 
 [node name="PowerUp5" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9498, -5.68019, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.81293, 7.05045, 0 )
 type = 4
 
 [node name="PowerUp6" parent="." instance=ExtResource( 4 )]
@@ -50,7 +50,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.41994, 2.7338, 0 )
 type = 3
 
 [node name="PowerUp7" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74675, -5.5346, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.66177, -28.4978, 0 )
 type = 2
 
 [node name="PowerUp8" parent="." instance=ExtResource( 4 )]
@@ -62,7 +62,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88781, -29.177, 0 )
 type = 3
 
 [node name="PowerUp10" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8843, -30.1074, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8843, -30.9826, 0 )
 type = 2
 
 [node name="Platforms Entry" type="Spatial" parent="."]
@@ -79,16 +79,13 @@ visible = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.84894, 36.3424, 0 )
 
 [node name="S_Platform" parent="Platforms Section 1" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7259, -24.1067, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7259, -24.3568, 0 )
 
 [node name="XL_Platform" parent="Platforms Section 1" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13741, 0, 0 )
 
 [node name="XL_Platform2" parent="Platforms Section 1" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.07085, -17.7889, 0 )
-
-[node name="XL_Platform3" parent="Platforms Section 1" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30015, -30.5591, 0 )
 
 [node name="L_Platform" parent="Platforms Section 1" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.84613, -6.9575, 0 )
@@ -120,11 +117,29 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.76988, -6.00004, 0.1 )
 [node name="M_Platform" parent="Platforms Section 1" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31289, -22.4264, 0 )
 
+[node name="M_Platform2" parent="Platforms Section 1" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5997, -30.5768, 0 )
+
+[node name="Blocking_Platform2" parent="Platforms Section 1" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9275, -29.631, 0.1 )
+
+[node name="Blocking_Platform3" parent="Platforms Section 1" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.005, -29.631, 0.1 )
+
+[node name="Blocking_Platform4" parent="Platforms Section 1" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9161, -27.7132, 0.1 )
+
+[node name="L_Platform2" parent="Platforms Section 1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47278, -30.573, 0 )
+
+[node name="S_Platform2" parent="Platforms Section 1" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53869, -34.7466, 0 )
+
 [node name="Platforms Section 2" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.84894, -7.28941, 0 )
 
 [node name="S_Platform" parent="Platforms Section 2" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.12749, -24.1067, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.12749, -24.9465, 0 )
 
 [node name="XL_Platform" parent="Platforms Section 2" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.11312, 0, 0 )
@@ -139,10 +154,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.01763, -30.5591, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.02818, -6.9575, 0 )
 
 [node name="Blocking_Platform" parent="Platforms Section 2" instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0716, -6.00168, 0.1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.28404, -6.00168, 0.1 )
 
 [node name="M_Platform" parent="Platforms Section 2" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8689, -21.9803, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8689, -22.5394, 0 )
+
+[node name="Blocking_Platform2" parent="Platforms Section 2" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6589, -21.5744, 0.1 )
 
 [node name="BG Sprites" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )

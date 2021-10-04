@@ -16,7 +16,7 @@ func _ready():
 	#self.connect("hit_player", self.get_parent(), "_on_hit_player")
 	anim_player.connect("animation_finished", self, "_on_anim_complete")
 	anim_player.play("falling_anim")
-	despawn_height = -100
+	despawn_height = -120
 
 func _physics_process(delta):
 	# gravity
