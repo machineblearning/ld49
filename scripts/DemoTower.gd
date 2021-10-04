@@ -29,6 +29,7 @@ func _on_checkpoint_entered(body):
 		level_state += 1
 
 func _on_VictoryTimer_timeout():
+	#player.change_state("victory")
 	emit_signal("next_level")
 
 func _on_player_death():
@@ -37,6 +38,8 @@ func _on_player_death():
 	pass
 
 func handle_level_complete():
+	player.change_state("victory")
+	
 	victory_timer.wait_time = 3.0
 	victory_timer.connect("timeout", self, "_on_VictoryTimer_timeout")
 	victory_timer.start()
@@ -47,7 +50,7 @@ func set_state(sid):
 	self.level_state = sid
 	
 	if level_state == 0:
-		player_spatial.transform.origin = Vector3(6,80,0) #42
+		player_spatial.transform.origin = Vector3(6,42,0) #42
 	if level_state == 1:
 		player_spatial.transform.origin = Vector3(6,7,0)
 

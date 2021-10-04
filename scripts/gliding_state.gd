@@ -13,7 +13,7 @@ var inputX: int = 0
 var lock
 var thrust_power: float = 1.0 #0.1
 var max_thurst: float = -2.5
-var stamina_cost: float = 0.1
+var stamina_cost: float = 1.0 #0.1
 
 func _ready():
 	persistent_state.collision_layer = 1
@@ -43,6 +43,10 @@ func _physics_process(delta):
 	persistent_state.velocity.y = clamp(persistent_state.velocity.y, -100, max_thurst)
 	
 	inputX = 0
+
+func _process(_delta):
+	if persistent_state.stamina <= 0.0:
+		change_state.call_func("falling")
 
 func move_left():
 	self.flip_sprite(false)

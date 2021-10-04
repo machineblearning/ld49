@@ -9,7 +9,9 @@ func _init():
 		"falling": FallingState,
 		"gliding": GlidingState,
 		"dodge": DodgeState,
-		"hitstun": HitstunState
+		"hitstun": HitstunState,
+		"death": DeathState,
+		"victory": VictoryState
 }
 
 func get_state(state_name):

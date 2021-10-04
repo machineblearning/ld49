@@ -36,7 +36,7 @@ func _process(_delta):
 #	print("fall velocity: ", persistent_state.velocity.y)
 #	print("stamina: ", persistent_state.stamina)
 #	print("State: ", persistent_state.state.id)
-	print("player z-value: ", persistent_state.translation.z)
+#	print("player z-value: ", persistent_state.translation.z)
 	pass
 
 func setup(change_state, persistent_state, animation_player, hitstun_timer, dodge_timer):

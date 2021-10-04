@@ -5,9 +5,10 @@ export var type: int = 1
 signal collected(type_id)
 var lock = false
 onready var anim_player = $AnimationPlayer
-
+onready var collect_sound = $CollectSoundPlayer
 
 func _ready():
+	collect_sound.connect("finished", self, "_on_sound_finished")
 	lock = false
 	setup(self.type)
 
@@ -16,8 +17,15 @@ func _on_Area_body_entered(body):
 		if not lock:	# only collect once
 			# item is collected
 			lock = true
+			collect_sound.play()
 			emit_signal("collected", self.type)
-			self.queue_free()
+			self.hide()
+			#emit_signal("collected", self.type)
+			#self.queue_free()
+
+func _on_sound_finished():
+	#emit_signal("collected", self.type)
+	self.queue_free()
 
 func setup(type):
 	self.type = type

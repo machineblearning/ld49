@@ -34,7 +34,10 @@ func _physics_process(delta):
 	if persistent_state.is_on_floor():
 		# refresh stamina (landing)
 		persistent_state.landing_sound.play()
-		persistent_state.stamina = 100.0
+		if persistent_state.stamina < 100.0:
+			persistent_state.stamina_refill_sound.play()
+			persistent_state.stamina = 100.0
+		
 		
 		change_state.call_func("idle")
 
