@@ -4,18 +4,24 @@ class_name DodgeState
 
 var id = "dodge"
 
-var dodge_cost = 10
+var dodge_cost = 30
 
 func _ready():
-	persistent_state.collision_layer = 8
-	self.animation_player.play("dodge_anim")
-	persistent_state.dodge_sound.play()
+	# check if enough stamina
+	if persistent_state.stamina >= dodge_cost:
+		# consume stamina
+		persistent_state.stamina -= dodge_cost
+		persistent_state.stamina = clamp(persistent_state.stamina, 0.0, 100.0)
 	
-	self.dodge_timer.set_wait_time(0.4)
-	self.dodge_timer.connect("timeout", self, "_on_dodge_timeout")
-	self.dodge_timer.start()
-	
-	persistent_state.stamina -= dodge_cost
+		persistent_state.collision_layer = 8
+		self.animation_player.play("dodge_anim")
+		persistent_state.dodge_sound.play()
+		
+		self.dodge_timer.set_wait_time(0.4)
+		self.dodge_timer.connect("timeout", self, "_on_dodge_timeout")
+		self.dodge_timer.start()
+	else: # no enough stam to dodge
+		_on_dodge_timeout()
 
 func _physics_process(delta):
 	#persistent_state.velocity.y -= gravity * delta

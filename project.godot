@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "State",
+"class": "DeathState",
+"language": "GDScript",
+"path": "res://scripts/death_state.gd"
+}, {
+"base": "State",
 "class": "DodgeState",
 "language": "GDScript",
 "path": "res://scripts/dodge_state.gd"
@@ -50,11 +55,17 @@ _global_script_classes=[ {
 "path": "res://scripts/state_factory.gd"
 }, {
 "base": "State",
+"class": "VictoryState",
+"language": "GDScript",
+"path": "res://scripts/victory_state.gd"
+}, {
+"base": "State",
 "class": "WalkState",
 "language": "GDScript",
 "path": "res://scripts/walk_state.gd"
 } ]
 _global_script_class_icons={
+"DeathState": "",
 "DodgeState": "",
 "FallingState": "",
 "GlidingState": "",
@@ -63,6 +74,7 @@ _global_script_class_icons={
 "PersistentState": "",
 "State": "",
 "StateFactory": "",
+"VictoryState": "",
 "WalkState": ""
 }
 
