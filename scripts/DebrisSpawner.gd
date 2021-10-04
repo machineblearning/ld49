@@ -4,7 +4,7 @@ onready var player = self.get_parent().get_node("Player/KinematicBody")
 onready var spawn_timer = $SpawnTimer
 var debris = preload("res://scenes/entities/Debris.tscn")
 
-var spawn_rate: float = 2.5 # objects per sec
+var spawn_rate: float = 1.3 #2.5 - hard # objects per sec
 var rng
 export var rng_mean: float = 0.0
 var rng_deviation: float = 7.0

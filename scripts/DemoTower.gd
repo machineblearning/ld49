@@ -3,6 +3,7 @@ extends Spatial
 onready var player = $Player/KinematicBody
 onready var player_spatial = $Player
 onready var goal = $Goal/Area
+onready var checkpoint1 = $Checkpoint1/Area
 onready var victory_timer = $VictoryTimer
 
 signal next_level
@@ -12,6 +13,7 @@ var level_state
 
 func _ready():
 	goal.connect("body_entered", self, "_on_goal_entered")
+	checkpoint1.connect("body_entered", self, "_on_checkpoint_entered")
 	player.connect("dead", self, "_on_player_death")
 	print("load level in state ", level_state)
 
@@ -30,8 +32,7 @@ func _on_VictoryTimer_timeout():
 	emit_signal("next_level")
 
 func _on_player_death():
-	print("DED")
-	self.level_state = 1
+	self.level_state = 0
 	emit_signal("reload_level", level_state)
 	pass
 
