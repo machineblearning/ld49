@@ -3,7 +3,7 @@
 [ext_resource path="res://art/Hat_spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Hat.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape" id=6]
+[sub_resource type="CapsuleShape" id=1]
 radius = 0.336047
 height = 0.659333
 
@@ -82,11 +82,11 @@ frame = 3
 "player_group",
 ]]
 input_ray_pickable = false
-collision_mask = 2
+collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Sprite3D/StaticBody"]
 transform = Transform( 1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0.0255225, 0, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/type1 = SubResource( 2 )

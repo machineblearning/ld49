@@ -19,6 +19,10 @@ func _physics_process(delta):
 	persistent_state.velocity.y = clamp(persistent_state.velocity.y, -term_velocity, 0.0)
 	#persistent_state.velocity.y = -8.0		# constant fall speed
 	
+	# Stop all Z-axis forces (Prevent falling out of the scene)
+	#persistent_state.velocity.z = 0
+	persistent_state.transform.origin.z = 0.5
+	
 	# Apply forces
 	persistent_state.move_and_slide(persistent_state.velocity, Vector3.UP)
 	#persistent_state.move_and_slide_with_snap(persistent_state.velocity, Vector3.DOWN * 32, Vector3.UP)
@@ -32,7 +36,7 @@ func _process(_delta):
 #	print("fall velocity: ", persistent_state.velocity.y)
 #	print("stamina: ", persistent_state.stamina)
 #	print("State: ", persistent_state.state.id)
-#	print("player z-value: ", persistent_state.translation.z)
+	print("player z-value: ", persistent_state.translation.z)
 	pass
 
 func setup(change_state, persistent_state, animation_player, hitstun_timer, dodge_timer):

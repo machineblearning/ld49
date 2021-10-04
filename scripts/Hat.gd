@@ -14,6 +14,10 @@ func _ready():
 	lock = false
 	setup(self.type)
 
+func _process(_delta):
+	#print("layer: ", self.body.collision_layer)
+	pass
+
 func setup(type):
 	self.type = type
 	# set sprite via animation

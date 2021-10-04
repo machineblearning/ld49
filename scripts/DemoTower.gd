@@ -47,7 +47,7 @@ func set_state(sid):
 	self.level_state = sid
 	
 	if level_state == 0:
-		player_spatial.transform.origin = Vector3(6,42,0)
+		player_spatial.transform.origin = Vector3(6,80,0) #42
 	if level_state == 1:
 		player_spatial.transform.origin = Vector3(6,7,0)
 
