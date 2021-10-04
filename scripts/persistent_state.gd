@@ -9,6 +9,7 @@ var sprite
 onready var landing_sound = $LandingSoundPlayer
 onready var deploy_sound = $DeploySoundPlayer
 onready var dodge_sound = $DodgeSoundPlayer
+onready var victory_sound = $VictorySoundPlayer
 
 onready var hat1 = $Hat1
 onready var hat2 = $Hat2
@@ -22,10 +23,15 @@ var stamina: float
 func _ready():
 	
 	self.health = 3
-	self.armor = 3
+	self.armor = 0
 	self.stamina = 100.0
 	self.sprite = $Sprite
+
 	state_factory = StateFactory.new()
+	
+	set_active_all_hats(false)
+	add_armor(4)
+	
 	change_state("idle")
 
 func _physics_process(_delta):
@@ -119,6 +125,11 @@ func add_armor(type_id):
 			hat3.set_active(true)
 			hat3.setup(type_id)
 	
+
+func set_active_all_hats(is_active):
+	hat1.set_active(is_active)
+	hat2.set_active(is_active)
+	hat3.set_active(is_active)
 
 func update_armor_ui(val):
 	pass

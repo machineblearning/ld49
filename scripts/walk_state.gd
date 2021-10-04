@@ -4,9 +4,9 @@ class_name WalkState
 
 var id = "walk"
 
-var move_speed: float = 16.0
+var move_speed: float = 32.0
 var min_move_speed: float = 0.05
-var max_move_speed: float = 2.0
+var max_move_speed: float = 4.0 #2.0
 var max_fall_speed: float = 8.0
 var slow_down_speed: float = 12.0
 var inputX: int = 0

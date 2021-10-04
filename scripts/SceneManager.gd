@@ -2,9 +2,9 @@ extends Node
 
 var title = preload("res://scenes/screens/TitleScreen.tscn")
 var level1 = preload("res://scenes/levels/DemoTower.tscn")
-var end = preload("res://scenes/screens/CreditsScreen.tscn")
+var end = preload("res://scenes/screens/VictoryScreen.tscn")
 
-var sceneArray = [level1, title, end]
+var sceneArray = [title, level1, end]
 #onready var level1 = get_node("test world")
 var currentScene
 var sceneIndx: int = 0

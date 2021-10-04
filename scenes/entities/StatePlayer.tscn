@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://art/Player.png" type="Texture" id=1]
 [ext_resource path="res://scripts/persistent_state.gd" type="Script" id=2]
@@ -7,10 +7,11 @@
 [ext_resource path="res://music/Spin_Dodge.wav" type="AudioStream" id=5]
 [ext_resource path="res://music/Main_Theme.wav" type="AudioStream" id=6]
 [ext_resource path="res://scenes/entities/Hat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://music/VICTORY_jingle.wav" type="AudioStream" id=8]
 
 [sub_resource type="BoxShape" id=1]
 margin = 0.1
-extents = Vector3( 0.843471, 0.948718, 1 )
+extents = Vector3( 0.843471, 0.837634, 1 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "dodge_anim"
@@ -121,7 +122,7 @@ collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.165626, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14778, 0 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite3D" parent="KinematicBody"]
@@ -140,7 +141,7 @@ anims/idle_anim = SubResource( 6 )
 anims/walk_anim = SubResource( 7 )
 
 [node name="CameraPlayer" type="Camera" parent="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15 )
 visible = false
 
 [node name="HitstunTimer" type="Timer" parent="KinematicBody"]
@@ -163,6 +164,10 @@ unit_db = 10.0
 stream = ExtResource( 6 )
 unit_db = 10.0
 autoplay = true
+
+[node name="VictorySoundPlayer" type="AudioStreamPlayer3D" parent="KinematicBody"]
+stream = ExtResource( 8 )
+unit_db = 10.0
 
 [node name="Hat1" parent="KinematicBody" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0623178, 0.602821, 0.165756 )

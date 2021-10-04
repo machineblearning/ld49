@@ -25,13 +25,14 @@ func _physics_process(delta):
 
 func _process(_delta):
 #	print("- - - -")
-	print("health: ", persistent_state.health)
-	print("armor: ", persistent_state.armor)
+#	print("health: ", persistent_state.health)
+#	print("armor: ", persistent_state.armor)
 #	print("collision layer: ", persistent_state.collision_layer)
 #	print("On floor? ", persistent_state.is_on_floor())
 #	print("fall velocity: ", persistent_state.velocity.y)
 #	print("stamina: ", persistent_state.stamina)
 #	print("State: ", persistent_state.state.id)
+#	print("player z-value: ", persistent_state.translation.z)
 	pass
 
 func setup(change_state, persistent_state, animation_player, hitstun_timer, dodge_timer):

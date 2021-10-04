@@ -78,7 +78,9 @@ texture = ExtResource( 1 )
 hframes = 4
 frame = 3
 
-[node name="StaticBody" type="StaticBody" parent="Sprite3D"]
+[node name="StaticBody" type="StaticBody" parent="Sprite3D" groups=[
+"player_group",
+]]
 input_ray_pickable = false
 collision_mask = 2
 
