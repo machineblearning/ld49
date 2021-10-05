@@ -25,7 +25,7 @@ func _ready():
 func _on_SpawnTimer_timeout():
 	var d = debris.instance()
 	var randX = rng.randfn(rng_mean, rng_deviation)
-	d.translate(Vector3(randX, 0, 0))
+	d.translate(Vector3(randX, 0, 0.3))
 	add_child(d)
 	d.get_node("KinematicBody").connect("hit_player", self, "_on_hit_player")
 	d.get_node("KinematicBody").connect("delete_me", self, "_on_delete_debris")

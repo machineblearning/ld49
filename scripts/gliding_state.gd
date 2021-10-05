@@ -11,8 +11,8 @@ var max_fall_speed: float = 8.0
 var slow_down_speed: float = 12.0
 var inputX: int = 0
 var lock
-var thrust_power: float = 1.0 #0.1
-var max_thurst: float = -2.5
+var thrust_power: float = 1.0 #20.0 #1.0 #0.1
+var max_thurst: float = 10 #-2.5
 var stamina_cost: float = 1.0 #0.1
 
 func _ready():
